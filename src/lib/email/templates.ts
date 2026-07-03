@@ -1,3 +1,30 @@
+export function welcomeEmailText({
+  name,
+  email,
+  password,
+  loginUrl,
+}: {
+  name: string;
+  email: string;
+  password: string;
+  loginUrl: string;
+}) {
+  return [
+    `Olá, ${name || "tudo bem"}!`,
+    "",
+    "Sua compra foi aprovada e seu acesso já está liberado. Use os dados abaixo para entrar na plataforma:",
+    "",
+    `E-mail: ${email}`,
+    `Senha temporária: ${password}`,
+    "",
+    "Por segurança, recomendamos trocar a senha no seu primeiro acesso.",
+    "",
+    `Acessar a plataforma: ${loginUrl}`,
+    "",
+    "Se você não fez essa compra, ignore este e-mail.",
+  ].join("\n");
+}
+
 export function welcomeEmailHtml({
   name,
   email,
